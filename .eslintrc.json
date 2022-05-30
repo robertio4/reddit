@@ -1,0 +1,41 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:import/typescript",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "plugins": ["import"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["postService", "./src/redux/modules/post"],
+          ["@components", "./src/components"],
+          ["@utils", "./src/utils"]
+        ],
+        "extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
+}
